@@ -25,14 +25,14 @@ func NewDbTest() *gorm.DB {
 	dbInstance := NewDb()
 	dbInstance.Env = "test"
 	dbInstance.DbTypeTest = "sqlite3"
-	dbInstance.DsnTest = ":memory"
+	dbInstance.DsnTest = ":memory:"
 	dbInstance.AutoMigrateDb = true
 	dbInstance.Debug = true
 
 	connection, err := dbInstance.Connect()
 
 	if err != nil {
-		log.Fatalf("Teste db error: %v", err)
+		log.Fatalf("Test db error: %v", err)
 	}
 
 	return connection
@@ -44,7 +44,7 @@ func (d *Database) Connect() (*gorm.DB, error) {
 	if d.Env != "test" {
 		d.Db, err = gorm.Open(d.DbType, d.Dsn)
 	} else {
-		d.Db, err = gorm.Open(d.DbType, d.DsnTest)
+		d.Db, err = gorm.Open(d.DbTypeTest, d.DsnTest)
 	}
 
 	if err != nil {
@@ -52,8 +52,8 @@ func (d *Database) Connect() (*gorm.DB, error) {
 	}
 
 	if d.Debug {
+		d.Db.LogMode(true)
 	}
-	d.Db.LogMode(true)
 
 	if d.AutoMigrateDb {
 		d.Db.AutoMigrate(&domain.Video{}, &domain.Job{})
