@@ -3,6 +3,8 @@ package database
 import (
 	"encoder/domain"
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/sqlite"
+	_ "github.com/lib/pq"
 	log "github.com/sirupsen/logrus"
 )
 
