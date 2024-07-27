@@ -31,7 +31,7 @@ func NewJob(output string, status string, video *Video) (*Job, error) {
 	job := Job{
 		OutputBucketPath: output,
 		Status:           status,
-		Video:            nil,
+		Video:            video,
 	}
 
 	job.prepare()
