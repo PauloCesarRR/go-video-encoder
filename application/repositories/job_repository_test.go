@@ -1,9 +1,9 @@
 package repositories_test
 
 import (
-	"encoder/application/repositories"
-	"encoder/domain"
-	"encoder/framework/database"
+	"github.com/PauloCesarRR/go-video-encoder/application/repositories"
+	"github.com/PauloCesarRR/go-video-encoder/domain"
+	"github.com/PauloCesarRR/go-video-encoder/framework/database"
 	uuid "github.com/satori/go.uuid"
 	"github.com/stretchr/testify/require"
 	"testing"

@@ -1,7 +1,7 @@
 package domain_test
 
 import (
-	"encoder/domain"
+	"github.com/PauloCesarRR/go-video-encoder/domain"
 	uuid "github.com/satori/go.uuid"
 	"github.com/stretchr/testify/require"
 	"testing"

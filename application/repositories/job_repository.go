@@ -1,8 +1,8 @@
 package repositories
 
 import (
-	"encoder/domain"
 	"fmt"
+	"github.com/PauloCesarRR/go-video-encoder/domain"
 	"github.com/jinzhu/gorm"
 )
 
